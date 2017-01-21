@@ -16,7 +16,7 @@ const Homework = ({
 	params
 }) => {
 	return (
-		<div className="homework">Homework { params.weekId } <AceEditor />
+		<div className="homework">Homework { params.weekId } 
 			<AceEditor
 			    mode="java"
 			    theme="github"
