@@ -8,7 +8,7 @@ var NewComponent = React.createClass({
       <div>
         {/* login-with-github */}
         <div className="brand">
-          <a href="https://codingbootcamp.rutgers.edu/" target="_blank">
+          <a href="https://codingbootcamp.rutgers.edu/" target="_blank" >
             <h5>Coding BootCamp</h5>
           </a>
         </div>
