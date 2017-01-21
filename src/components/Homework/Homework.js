@@ -3,6 +3,10 @@ import React from 'react';
 
 // import { render } from 'react-dom';
 // import brace from 'brace';
+var Mayday = require("../Mayday-Button/Mayday.js");
+import {Button} from 'react-materialize';
+// import '../Mayday-Button/Mayday.js';
+import axios from 'axios';
 import AceEditor from 'react-ace';
 
 import 'brace/mode/java';
@@ -12,23 +16,46 @@ function onChange(newValue) {
   console.log('change',newValue);
 }
 
+// function yellMayday() {
+// 		axios({
+// 		  method: 'post',
+// 		  url: 'https://hooks.slack.com/services/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',
+// 		  data: {
+// 		    "text":"This is a line of text.\nAnd this is another one."
+// 		  }
+// 		});
+
+// 		console.log('Mayday button clicked');
+// 	}
+
+function yellMayday() {
+		axios.post('https://crossorigin.me/hooks.slack.com/services/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', {
+		    "text":"Help Me Obi Wan Code Obi.\nYou're my only hope."
+		  });
+
+		console.log('Mayday button clicked');
+	} 
+
+
 const Homework = ({
 	params
 }) => {
 	return (
-		<div className="homework">Homework { params.weekId } 
-			<AceEditor
-			    mode="java"
-			    theme="github"
-			    onChange={onChange}
-			    name="UNIQUE_ID_OF_DIV"
-			    editorProps={{$blockScrolling: true}}
-			  />
+		<div>
+			<div className="mayday">
+				<Button onClick={ () => { yellMayday() } } waves='light'>Get Help!</Button>
+			</div>	
+			<div className="homework">Homework { params.weekId } 
+				<AceEditor
+				    mode="java"
+				    theme="github"
+				    onChange={onChange}
+				    name="UNIQUE_ID_OF_DIV"
+				    editorProps={{$blockScrolling: true}}
+				  />
 
+			</div>
 		</div>
-			
-
-
 	);
 };
 
