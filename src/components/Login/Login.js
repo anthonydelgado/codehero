@@ -4,7 +4,6 @@ import { Input, Button, Row, Col } from 'react-materialize';
 import { browserHistory } from 'react-router';
 // react-router Link
 
-
 const Login = () => {
 	return (
 		<div className="login">
