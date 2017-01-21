@@ -1,0 +1,12 @@
+.week-select {
+	display: flex;
+	justify-content: space-between;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.week-button {
+	display: inline-block;
+	margin-top: 10px;
+	width: 18%;
+}

@@ -10,7 +10,9 @@ class App extends Component {
     return (
 		<div className="app">
 			<AppHeader current={ currentRoute }/>
-			{ this.props.children }
+			<div className="content-wrap">
+				{ this.props.children }
+			</div>
 		</div>
     );
   }
@@ -23,7 +25,7 @@ const AppHeader = ({
 	return (
 		<div className="app-header">
 			<div className="app-header__logo"><Link to="/">CODEHERO</Link></div>
-			<div className="app-header__current"><Link to="enter">Sign In</Link></div>
+			<div className="app-header__current"><Link to="login">Log In</Link></div>
 		</div>
 	);
 };
