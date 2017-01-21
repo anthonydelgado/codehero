@@ -1,4 +1,5 @@
 import React from 'react';
+import './Homework.css';
 // import { Link } from 'react-router';
 
 // import { render } from 'react-dom';
@@ -18,13 +19,15 @@ const Homework = ({
 }) => {
 	return (
 		<div className="homework">Homework { params.weekId } 
-			<AceEditor
+			<AceEditor className="ace-editor"
 			    mode="javascript"
 			    theme="monokai"
+			    enableBasicAutocompletion={true}
+			    enableEmmet={true}
 			    onChange={onChange}
 			    name="UNIQUE_ID_OF_DIV"
 			    editorProps={{$blockScrolling: true}}
-			  />
+			/>
 
 		</div>
 			
