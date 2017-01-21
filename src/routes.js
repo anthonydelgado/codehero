@@ -9,6 +9,7 @@ export default (
 		<Route path="/" component={ App } >
 			<Route path="login" component={ Login } />
 			<Route path="week/:weekId" component={ Homework } />
+			<Route path="EntryPage" component={ EntryPage } />
 		</Route>
 	</Router>
 );
