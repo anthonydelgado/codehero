@@ -29,9 +29,10 @@ function onChange(newValue) {
 // 	}
 
 function yellMayday() {
-		axios.post('https://crossorigin.me/hooks.slack.com/services/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', {
-		    "text":"Help Me Obi Wan Code Obi.\nYou're my only hope."
-		  });
+		axios.post('/slack-hook', {
+			studentName: "Jo",
+			weekNumber: 'Week 3'
+		})
 
 		console.log('Mayday button clicked');
 	} 

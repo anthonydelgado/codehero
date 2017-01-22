@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "axios": "^0.15.3",
+    "body-parser": "^1.16.0",
     "brace": "^0.9.1",
     "react": "^15.4.2",
     "react-ace": "^4.1.1",

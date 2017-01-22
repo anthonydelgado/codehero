@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+	<div class="mayday">
+		<Button id="help"> Get Help!</Button>
+	</div>
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<!-- <script>
+	$('#help').on("click", function() {
+	$.ajax({
+	  'method': "POST",
+	  'url': "http://localhost:3005/slack-hook",
+	  'data': "hey",
+	}).done(function(response) {
+		console.log("post sent to our server");	
+	});
+
+	
+	});	
+</script> -->
+<script>
+
+$('#help').click(function(event) {
+	event.preventDefault();
+	var currentURL = window.location.origin;
+	// var slackURL = "hooks.slack.com/services/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";
+    $.post(currentURL + "/slack-hook", function(data){
+        console.log(data);
+  	}); //end POST 
+  	//  $.post(slackURL, function(data){
+   //      console.log(data);
+  	// }); //end POST 
+	
+	});
+</script>
+</html>
