@@ -76,7 +76,7 @@ router.get('/token', function(request, response) {
 
 router.get('/slack-hook', function(req, res) {
 
-  var myJSONStr = 'payload= {"username": "Code Hero Bot", "icon_emoji": ":robot_face:", "channel": "#help-needed", "text": "There is a student in need of help! <http://superman.com|Click here to save them>"}'
+  var myJSONStr = 'payload= {"username": "Code Hero Bot", "icon_emoji": ":robot_face:", "channel": "#help-needed", "text": "There is a student in need of help! <https://evening-spire-90860.herokuapp.com/react|Click here to save them> Look! Up in the sky! It’s a bird! It’s a plane! It’s . . . CODEHERO! "}'
 
   var xmlhttp = new XMLHttpRequest();
   var webhook_url = 'https://hooks.slack.com/services/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';
