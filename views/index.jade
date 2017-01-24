@@ -1,0 +1,12 @@
+extends layout
+
+block content
+
+      if (!user)
+
+        include  templates/home-hero.html
+
+      if (user)
+
+            include  templates/react.html
+

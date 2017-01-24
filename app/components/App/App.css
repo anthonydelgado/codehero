@@ -1,0 +1,36 @@
+.app {
+	font-family: Helvetica, Arial;
+	background-color: #dadada;
+}
+
+.content-wrap {
+	max-width: 960px;
+	width: 100%;
+	margin: 0 auto;
+	background-color: #fff;
+}
+
+.app-header {
+	height: 60px;
+	background-color: #666;
+	color: #f1f1f1;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.app-header__logo {
+	font-size: 28px;
+	margin: 0 1vw;
+	font-family: 'Orbitron', sans-serif;
+}
+
+.app-header__current {
+	font-size: 20px;
+	margin: 0 1vw;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+.bg-img {
+	width: 100%;
+}

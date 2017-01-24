@@ -1,0 +1,25 @@
+{
+  "name": "codehero",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "react-scripts": "0.8.5"
+  },
+  "dependencies": {
+    "axios": "^0.15.3",
+    "body-parser": "^1.16.0",
+    "brace": "^0.9.1",
+    "react": "^15.4.2",
+    "react-ace": "^4.1.1",
+    "react-dom": "^15.4.2",
+    "react-materialize": "^0.17.7",
+    "react-router": "^3.0.2",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
