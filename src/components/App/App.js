@@ -10,9 +10,8 @@ class App extends Component {
     return (
 		<div className="app">
 			<AppHeader current={ currentRoute }/>
-			<div className="content-wrap">
-				{ this.props.children }
-			</div>
+			{ this.props.children }
+
 		</div>
     );
   }
