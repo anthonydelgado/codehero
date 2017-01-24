@@ -1,51 +1,75 @@
 
 const descriptions = {
 	 '01': `
-		// 	Overview
+		
+		<!DOCTYPE html>
+		<html>
 
-		// 	In this assignment, you'll build a professional portfolio site using HTML/CSS. These instructions include a short style guide; follow it to design an aesthetically pleasing layout while creating different kinds of complex HTML elements.
+		<head>
+			<title>About Me &mdash; Tatiana Alcocer</title>
+			<link rel="stylesheet" type="text/css" href="style.css">
+			<link rel="stylesheet" type="text/css" href="/css/reset.css">
+		</head>
 
-		// 	Before You Begin
+		<body>
+			<div class="nav-bar">
+				<div class="wrap">
+					<div class="nav-name">
+						Tatiana Alcocer
+					</div>
 
-		// 	Welcome to your first opportunity as a front-end web designer. You will be advocating for your most important client -- yourself! By making a portfolio, you'll take your first step toward building your web development brand
+					<div class="nav-links">
+						<ul>
+							<li class="nav-link"><a href="index.html">About</a></li>
+							<li class="nav-link"><a href="portfolio.html">Portfolio</a></li>
+							<li class="nav-link"><a href="contact.html">Contact</a></li>				
+						</ul>
+					</div>
+				</div>
+			</div>
 
-		// 	This will be one of your harder assignments, if only because you're just getting your feet wet in web design. Trust us, though: it will get easier. Invest your time in this assignment and it will pay dividends!
+			<div class="content-body">
+				<div class="wrap">
+					<div class="content">
+						<h2>About Me</h2>
+						<hr />
 
-		// 	You'll have all the tools you need to complete this homework by the end of Saturday's class.
+							<img class="content-image" src="assets/images/ProfileImage.jpg">
+						
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-		// 	Instructions
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
 
-		// 	Create a new repository in GitHub called Basic-Portfolio.
+					</div>
 
-		// 	Clone this repository to your computer using the process we went over in class.
+					<div class="sidebar">
+						<h3>Connect with Me</h3>
+						<hr />	
 
-		// 	Navigate to the Basic-Portfolio folder that you just cloned onto your machine. Inside this folder, create the following:
+						<img class="sidebar-icons" src="assets/images/GitHubIcon.png">
 
-		// 	3 HTML documents: index.html, contact.html and portfolio.html
-		// 	A folder called assets.
-		// 	Inside the assets directory, make two additional folders: css and images.
-		// 	In the css folder, make a file called style.css.
-		// 	In the css folder, make a file called reset.css and include the code found from the Meyerweb reset located here
-		// 	In the images folder, save the images you plan on using (like your profile image, the placeholder images for the portfolio, and the social icon images).
-		// 	Push the above changes to GitHub.
+						<img class="sidebar-icons" src="assets/images/StackOverflow.png">
 
-		// 	Make sure to git add . and git commit -m "initial site files" then type git push origin master to push your changes to your GitHub repo.
+						<img class="sidebar-icons" src="assets/images/LinkedInIcon.png">
 
-		// 	When you create a website, it's standard practice to code your HTML files before writing any CSS -- and to write up one HTML file before moving onto the next. Write your HTML semantically, too:
+					</div>
+				</div>
+			</div>
 
-		// 	If something is a heading, you use a heading tag.
-		// 	If something is a list, you use an unordered or ordered list tag.
-		// 	So on and so forth.
-		// 	The content for the index.html should be unique to you.
+			<div class="footer">
+				<div class="wrap">
+					<p>Copyright 2016 Tatiana Alcocer</p>
+				</div>
+			</div>
 
-		// 	Write a paragraph or two about yourself. Make it fun, show your personality!
-		// 	The main logo where it says "Your Name" should say your name. This may make the logo section smaller or wider depending on how long your name is, that is fine and expected.
-		// 	Add, commit, and push your code to GitHub often, especially when you complete a page.
-		// 	After all of your html is written, you can begin styling your pages using the style.css file you created.
-
-		// 	Be sure to validate your html
-		// 	Consult the specs below these instructions for advice on styling your CSS files.
-		// 	Push your changes to Github.`,
+		</body>
+		</html>`,
 
 	'02': `
 		// Overview
@@ -117,199 +141,425 @@ const descriptions = {
 		// git push heroku master`,
 
 	'03': `
-		// Overview
+		$(document).ready(function(){
 
-		// In this assignment, you'll create one of two possible computer games: Hangman or Psychic. These apps will run in the browser, and feature dynamically updated HTML powered by your JavaScript code.
+		// WORD LIST:
 
-		// Remember
+		var wordList = [
+			"Greywind",
+			"Summer",
+			"Lady", 
+			"Ghost", 
+			"Shaggydog", 
+			"Nymeria", 
+		];
 
-		// You will be fully capable of doing this homework by the end of Saturday's class.
+		// DECLARE VARIABLES: 
 
-		// Before You Begin
+		var keyWord = wordList[Math.floor(Math.random() * wordList.length)].toLowerCase();
+		var displayWord = "";
+		var wrongList = [];
+		var acceptedList = [];
 
-		// Create a new GitHub repo called week-3-game, then clone it to your computer.
 
-		// Inside your local week-3-game folder, create the following: index.html, composer.json and index.php
 
-		// Fill in the appropriate content in the composer.json and index.php files to be able to deploy your game to Heroku when it is finished.
-		// While still in your week-3-game directory, make a folder called assets.
 
-		// cd your way into the assets folder, then make three additional folders: javascript, css and images.
-		// In the javascript folder, make a file called game.js.
-		// In the css folder, make a file called style.css.
-		// Also in the css folder, make a file called reset.css. Paste into it the code from the Meyerweb reset stylesheet.
-		// In the images folder, save whatever images you plan on using.
-		// Push the above changes to GitHub.
+		// DEFINE FUNCTIONS:
 
-		// Choose whichever game you'd like to make. Making the Psychic game will prove easier than coding Hangman. Yet the challenges inherit to the Hangman exercise will provide you a more comprehensive review of this week's material. We'd suggest at least trying Hangman first.
+		// When userGuess (character) is equal to a character in the keyWord string, replace "_" with the userGuess in displayWord's equivalent location (index).
+		function stringReplaceAt(string, index, character) {
+		    return string.substr(0, index) + character + string.substr(index + 1);
+		}
 
-		// Note: There's no shame if you'd prefer submitting Psychic. Don't worry, it's still a proper challenge :)
-		// Push your selected game to Heroku. Remember:
 
-		// heroku login
-		// heroku create
-		// git push heroku master
+		// Rendering the #display-word. For-loop in 'MAIN SECTION' to replace with underscores.
+		function renderDisplayWord(w) {
+			document.querySelector('#display-word').innerHTML = w;
+		}
 
-		// Option One: Psychic Game (Easy)
 
-		// Psychic
+		// Searches through the keyWord string for the userGuess matching input
+		// http://stackoverflow.com/a/20968478/6670038
+		function allIndexOf(str, toSearch) {
+		    var indices = [];
+		    for(var pos = str.indexOf(toSearch); pos !== -1; pos = str.indexOf(toSearch, pos + 1)) {
+		        indices.push(pos);
+		    }
+		    return indices;
+		}
 
-		// Watch the demo.
 
-		// You're going to make a game just like the one in the video. Essentially, the app randomly picks a letter, and the user has to guess which letter the app chose. Put the following text on your page:
+		// Searches arrays
+		// http://stackoverflow.com/a/15514976/6670038
+		function checkWin(displayWord, keyWord) {
+			for(var i = 0; i < keyWord; i++){
+				if(displayWord.indexOf(keyWord[i]) === -1) {
+					return false;
+				}
+			}
+			if(displayWord.indexOf("_") !== -1) {
+				return false;
+			}
+			return true;
+		}
 
-		// Guess what letter I'm thinking of
 
-		// Wins: (# of times the user has guessed the letter correctly)
+		// MAIN SECTION:
+		// Sets the number of underscores for displayWord
+		for(var i = 0; i < keyWord.length; i++) {
+			displayWord = displayWord + "_"; 
+		}
 
-		// Losses: (# of times the user has failed to guess the letter correctly after exhausting all guesses)
+		renderDisplayWord(displayWord);
 
-		// Guesses Left: (# of guesses left. This will update)
+		// Background overlay click
+			$("#background-overlay").on("click", function(event){
+				console.log(event);
+				$(event.currentTarget).addClass("hidden");
+			});
 
-		// Your Guesses So Far: (the specific letters that the user typed. Display these until the user either wins or loses.)
 
-		// When the player wins, increase the Wins counter and start the game over again (without refreshing the page).
 
-		// When the player loses, increase the Losses counter and restart the game without a page refresh (just like when the user wins).
+		// EVENT LISTENERS: 
 
-		// Option Two: Hangman Game (Moderate - Recommended)
+		window.addEventListener("keyup", function(event) {
+			var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+			console.log(userGuess);
+			var guessIndices = allIndexOf(keyWord, userGuess);
 
-		// Hangman
+			// GAME LOGIC:
+			if (guessIndices.length == 0) {
 
-		// Watch the demo.
+				// WRONG GUESS, NOT LOSING
+				if (wrongList.length < 5) {
 
-		// Choose a theme for your game! In the demo, we picked an 80s theme: 80s questions, 80s sound and an 80s aesthetic. You can choose any subject for your theme, though, so be creative!
+					// Restricts duplicate letters pushed to wrongList
+					if (wrongList.indexOf(userGuess) == -1) {
+						wrongList.push(userGuess);
+						$("#wrong-count").append("<img class='wrong-img' src='assets/images/wrong.png'>");
+						document.querySelector("#wrong-list").innerHTML = wrongList.join("")
+					}
 
-		// Use key events to listen for the letters that your players will type.
+				//WRONG GUESS, LOSING
+				} else if (wrongList.length == 5) { 
+					console.log("gameover");
 
-		// Display the following on the page:
+					var lossImagePath = "";
+						if (Math.random() * 2 > 1) {
+							lossImagePath = "assets/images/lose1.gif";
+						} else {
+							lossImagePath = "assets/images/lose2.gif";
+						}
 
-		// Press any key to get started!
+					swal({   
+						title: "LOSS",   
+						text: "You're dead.",   
+						imageUrl: lossImagePath,
+						imageSize: "300x300"
+					});
+				}
+			} else {
+				// RIGHT GUESS, NOT WINNING
+				// Looping through guessIndices and updating displayWord per iteration
+				if (acceptedList.indexOf(userGuess) == -1) {
+						acceptedList.push(userGuess);
+					}
 
-		// Wins: (# of times user guessed the word correctly).
+				document.querySelector("#accepted-list").innerHTML = acceptedList.join("");
 
-		// If the word is madonna, display it like this when the game starts: _ _ _ _ _ _ _.
+				for(var i = 0; i < guessIndices.length; i++) {
+					displayWord = stringReplaceAt(displayWord, guessIndices[i], userGuess);
+				}
 
-		// As the user guesses the correct letters, reveal them: m a d o _ _ a.
+				// += is adding the value of the userGuess to the #accepted-list
+				document.querySelector("#accepted-list").innerHTML = acceptedList.join("");
+					
+				// Updates displayWord in html
+				renderDisplayWord(displayWord);
 
-		// Number of Guesses Remaining: (# of guesses remaining for the user).
+				//WINNING
+				if (checkWin(displayWord, keyWord)) {
+					console.log("win");
 
-		// Letters Already Guessed: (Letters the user has guessed, displayed like L Z Y H).
+					var winImagePath = "";
+						if (Math.random() * 2 > 1) {
+							winImagePath = "assets/images/win1.gif";
+						} else {
+							winImagePath = "assets/images/win2.gif";
+						}
 
-		// After the user wins/loses the game should automatically choose another word and make the user play it.
+					swal({   
+						title: "WIN",   
+						text: "You won!",   
+						imageUrl: winImagePath,
+						imageSize: "300x300"
+					});
 
-		// Hangman Game Bonuses
+				}
+				
 
-		// Play a sound or song when the user guesses their word correctly, like in our demo.
-		// Write some stylish CSS rules to make a design that fits your game's theme.
-		// HARD MODE: Organize your game code as an object, except for the key events to get the letter guessed. This will be a challenge if you haven't coded with JavaScript before, but we encourage anyone already familiar with the language to try this out.
-		// Save your whole game and it's properties in an object.
-		// Save any of your game's functions as methods, and call them underneath your object declaration using event listeners.
-		// Don't forget to place your global variables and functions above your object.
-		// Remember: global variables, then objects, then calls.
-		// Definitely talk with a TA or your instructor if you get tripped up during this challenge.`,
+			}
+		}); // END OF KEYUP EVENT LISTENER
+
+
+		})
+
+		`,
 
 	'04': `
-		// Overview
+		$(document).ready(function(){
 
-		// In this assignment, you'll create another fun and interactive game for web browsers. This time, your app must dynamically update your HTML pages with the jQuery library.
+		// TO DO: 
+		// Win and loss notification
+		// Vary HP per character
+		// Add instructions
+		// Change increaseAttack() to larger intervals
+		// ----------------------------------------------------------------
 
-		// Remember
+		// VARIABLES:
+		var defaultGameState = {
+			playerCharacter: "",
+			playerAttack: "",
+			opponentCharacter: "",
+			playerAssigned: false,
+			opponentAssigned: false,
+		};
 
-		// You will be fully capable of doing this homework by the end of Saturday's class.
+		var gameState = $.extend({}, defaultGameState);
 
-		// Before You Begin
+		var characters = {
+			character1: {
+				name: "Oberyn",
+				hp: 100,
+				attack: 15,
+			},
 
-		// Create a new GitHub repo called week-4-game, then clone it to your computer.
+			character2: {
+				name: "Joffrey",
+				hp: 100,
+				attack: 10,
+			},
 
-		// Inside the week-4-game folder, create the following: index.html, composer.json and index.php.
+			character3: {
+				name: "Melissandre",
+				hp: 100,
+				attack: 15,
+			},
 
-		// Place the appropriate content in the composer.json and index.php files, so you can deploy your game to Heroku.
-		// Still inside the week-4-game directory, make a folder called assets.
+			character4: {
+				name: "Dany",
+				hp: 100,
+				attack: 25,
+			},
 
-		// Inside the assets directory, make three additional folders: javascript, css and images.
-		// In the javascript folder, make a file called game.js.
-		// In the css folder, make a file called style.css.
-		// In the css folder, make a file called reset.css. Paste into it the code found from the Meyerweb Reset.
-		// In the images folder, save any of the images you plan on using.
-		// Push the above changes to GitHub.
+			character5: {
+				name: "White Walker",
+				hp: 100,
+				attack: 30,
+			}
 
-		// Choose whichever game you want to make from the choices below. The CrystalsCollector game is easier than making the Star Wars RPG, but you'll get a more comprehensive review with the Star Wars exercise.
+		}; //end of var characters
 
-		// Option One: CrystalsCollector Game (Easy)
+		var attackCounter = 0;
 
-		// Crystal Collector
 
-		// Watch the demo.
 
-		// The player will have to guess the answer, just like in Hangman. This time, though, the player will guess with numbers instead of letters.
+		// FUNCTIONS: 
 
-		// Here's how the app works:
+		function initGame() {
 
-		// There will be four crystals displayed as buttons on the page.
+			console.log("initGame");
 
-		// The player will be shown a random number at the start of the game.
+			// Copying the default game state
+			gameState = $.extend({}, defaultGameState);
 
-		// When the player clicks on a crystal, it will add a specific amount of points to the player's total score.
+			$(".player-hp").html(" ");
+			$(".opponent-hp").html(" ");
 
-		// Your game will hide this amount until the player clicks a crystal.
-		// When they do click one, update the player's score counter.
-		// The player wins if their total score matches the random number from the beginning of the game.
+			$(".character-cell").removeClass("character-cell--hidden");
 
-		// The player loses if their score goes above the random number.
+			$(".o-arena-cells").addClass("o-arena--hidden");
 
-		// The game restarts whenever the player wins or loses.
+			$(".p-arena-cells").addClass("p-arena--hidden");
 
-		// When the game begins again, the player should see a new random number. Also, all the crystals will have four new hidden values. Of course, the user's score (and score counter) will reset to zero.
-		// The app should show the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game.
+			$(".character-cell").off("click");
+			$(".attack-button").off("click");
 
-		// Game design notes:
+			$(".character-cell").on("click", chooseOpponent);
+			$(".character-cell").on("click", chooseCharacter);
 
-		// The random number shown at the start of the game should be between 19 - 120.
+			$(".attack-button").on("click", increaseAttack);
+			$(".attack-button").on("click", recordDamage);
 
-		// Each crystal should have a random hidden value between 1 - 12.
+			attackCounter = 0;
+			
+		}
 
-		// Option Two: Star Wars RPG Game (Normal)
 
-		// Star Wars
 
-		// Watch the demo.
 
-		// Here's how the app works:
+		function chooseCharacter(event) {
 
-		// When the game starts, the player will choose a character by clicking on the fighter's picture. The player will fight as that character for the rest of the game.
+			// console.log(event);
+			console.log('chooseCharacter');
 
-		// The player must then defeat all of the remaining fighters. Enemies should be moved to a different area of the screen.
+			var id = event.currentTarget.id;
 
-		// The player chooses an opponent by clicking on an enemy's picture.
+			if (!gameState.playerAssigned) {
 
-		// Once the player selects an opponent, that enemy is moved to a defender area.
+				switch(id) {
 
-		// The player will now be able to click the attack button.
+					case "cell1": 
+						$(event.currentTarget).addClass("character-cell--hidden");
+						$("#p-arena-cell1").removeClass("p-arena--hidden");
+						gameState.playerCharacter = $.extend({}, characters.character1);
+						gameState.playerAssigned = true;
+						$(".player-hp").html("Oberyn");
+						break;
 
-		// Whenever the player clicks attack, their character damages the defender. The opponent will lose HP (health points). These points are displayed at the bottom of the defender's picture.
-		// The opponent character will instantly counter the attack. When that happens, the player's character will lose some of their HP. These points are shown at the bottom of the player character's picture.
-		// The player will keep hitting the attack button in an effort to defeat their opponent.
+					case "cell2":
+						$(event.currentTarget).addClass("character-cell--hidden");
+						$("#p-arena-cell2").removeClass("p-arena--hidden");
+						gameState.playerCharacter = $.extend({}, characters.character2);
+						gameState.playerAssigned = true;
+						$(".player-hp").html("Joffrey");
+						break;
 
-		// When the defender's HP is reduced to zero or below, remove the enemy from the defender area. The player character can now choose a new opponent.
-		// The player wins the game by defeating all enemy characters. The player loses the game the game if their character's HP falls to zero or below.
+					case "cell3": 
+						$(event.currentTarget).addClass("character-cell--hidden");
+						$("#p-arena-cell3").removeClass("p-arena--hidden");
+						gameState.playerCharacter = $.extend({}, characters.character3);
+						gameState.playerAssigned = true;
+						$(".player-hp").html("Melissandre");
+						break;
 
-		// Game design notes:
+					case "cell4": 
+						$(event.currentTarget).addClass("character-cell--hidden");
+						$("#p-arena-cell4").removeClass("p-arena--hidden");
+						gameState.playerCharacter = $.extend({}, characters.character4);
+						gameState.playerAssigned = true;
+						$(".player-hp").html("Dany");
+						break;
 
-		// Each character in the game has 3 attributes: Health Points, Attack Power and Counter Attack Power.
+					case "cell5": 
+						$(event.currentTarget).addClass("character-cell--hidden");
+						$("#p-arena-cell5").removeClass("p-arena--hidden");
+						gameState.playerCharacter = $.extend({}, characters.character5);
+						gameState.playerAssigned = true;
+						$(".player-hp").html("White Walker");
+						break;
 
-		// Each time the player attacks, their character's Attack Power increases by its base Attack Power.
+					default: 
+						break;
+				}
+			}
+			
+		} // end of chooseCharacter
 
-		// For example, if the base Attack Power is 6, each attack will increase the Attack Power by 6 (12, 18, 24, 30 and so on).
-		// The enemy character only has Counter Attack Power.
+		function chooseOpponent(event) {
 
-		// Unlike the player's Attack Points, Counter Attack Power never changes.
-		// The Health Points, Attack Power and Counter Attack Power of each character must differ.
+			console.log('chooseOpponent');
 
-		// No characters in the game can heal or recover Health Points.
+			var id = event.currentTarget.id;
 
-		// A winning player must pick their characters wisely by first fighting an enemy with low Counter Attack Power. This will allow them to grind Attack Power and to take on enemies before they lose all of their Health Points. Healing options would mess with this dynamic.
-		// Your players should be able to win and lose the game no matter what character they choose. The challenge should come from picking the right enemies, not choosing the strongest player.`,
+			if (!gameState.opponentAssigned && gameState.playerAssigned) {
+
+				switch(id) {
+
+					case "cell1": 
+						$(event.currentTarget).addClass("character-cell--hidden");
+						$("#o-arena-cell1").removeClass("o-arena--hidden");
+						gameState.opponentCharacter = $.extend({}, characters.character1);
+						gameState.opponentAssigned = true;
+						$(".opponent-hp").html("Oberyn");
+						break;
+
+					case "cell2":
+						$(event.currentTarget).addClass("character-cell--hidden");
+						$("#o-arena-cell2").removeClass("o-arena--hidden");
+						gameState.opponentCharacter = $.extend({}, characters.character2);
+						gameState.opponentAssigned = true;
+						$(".opponent-hp").html("Joffrey");
+						break;
+
+					case "cell3": 
+						$(event.currentTarget).addClass("character-cell--hidden");
+						$("#o-arena-cell3").removeClass("o-arena--hidden");
+						gameState.opponentCharacter = $.extend({}, characters.character3);
+						gameState.opponentAssigned = true;
+						$(".opponent-hp").html("Melissandre");
+						break;
+
+					case "cell4": 
+						$(event.currentTarget).addClass("character-cell--hidden");
+						$("#o-arena-cell4").removeClass("o-arena--hidden");
+						gameState.opponentCharacter = $.extend({}, characters.character4);
+						gameState.opponentAssigned = true;
+						$(".opponent-hp").html("Dany");
+						break;
+
+					case "cell5": 
+						$(event.currentTarget).addClass("character-cell--hidden");
+						$("#o-arena-cell5").removeClass("o-arena--hidden");
+						gameState.opponentCharacter = $.extend({}, characters.character5);
+						gameState.opponentAssigned = true;
+						$(".opponent-hp").html("White Walker");
+						break;
+
+					default: 
+						break;
+				}
+			}
+		} // END OF CHOOSE OPPONENT
+
+		function opponentDefeat() {
+
+			if (gameState.opponentCharacter.hp < gameState.playerAttack) {
+
+				console.log("running opponentDefeat");
+
+				gameState.opponentAssigned = false;
+				$(".o-arena-cells").addClass("o-arena--hidden");
+				$(".opponent-hp").html("Choose your next opponent");
+
+			}
+		}
+
+
+		function increaseAttack() {
+
+			if (gameState.playerAssigned && gameState.opponentAssigned) {
+				gameState.playerAttack = 20 + attackCounter + attackCounter++;
+				console.log(gameState.playerAttack);
+			}
+		}
+
+
+		function recordDamage() {
+			console.log("recordDamage");
+			if (gameState.playerAssigned && gameState.opponentAssigned && gameState.opponentCharacter.hp > gameState.playerAttack) {
+
+				gameState.playerCharacter.hp = gameState.playerCharacter.hp - gameState.opponentCharacter.attack;
+				gameState.opponentCharacter.hp = gameState.opponentCharacter.hp - gameState.playerAttack;
+
+				$(".player-hp").html(gameState.playerCharacter.name + "</br>" + "HP: " + gameState.playerCharacter.hp + "</br>" + "AP: " + gameState.playerAttack);
+				$(".opponent-hp").html(gameState.opponentCharacter.name + "</br>" + "HP: " + gameState.opponentCharacter.hp);
+
+			} else {
+				console.log("opponentDefeat");
+				opponentDefeat();
+			}
+
+		}
+
+
+		// BEGIN GAME: 
+
+		initGame();
+		$("#reset-game").on("click", initGame);
+
+
+		}) // END OF DOCUMENT READY FUNCTION`,
 
 	'05': `
 		//Overview
