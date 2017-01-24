@@ -1,6 +1,8 @@
 import React from 'react';
 import './Homework.css';
 import descriptions from './Descriptions.js';
+import { Button, Row } from 'react-materialize';
+
 
 // import { Link } from 'react-router';
 
@@ -41,6 +43,9 @@ const Homework = ({
 	return (
 		<div className="homework">
 			{ titles[params.weekId] } 
+			<Row>
+				<Button onClick={ () => { onMaydayClick() } } className='mayday #ef5350 red lighten-1' waves='light'>MAYDAY!</Button>
+			</Row>
 			<AceEditor
 				className="ace-editor"
 			    mode="javascript"
@@ -56,9 +61,12 @@ const Homework = ({
 
 		</div>
 			
-
-
 	);
+
+	function onMaydayClick() {
+		console.log('Mayday button clicked');
+		// Slackbot triggered
+	}
 };
 
 
