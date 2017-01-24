@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import './App.css';
+// import './././public/assets';
 
 class App extends Component {
   render() {
@@ -11,7 +12,8 @@ class App extends Component {
 		<div className="app">
 			<AppHeader current={ currentRoute }/>
 			{ this.props.children }
-
+			<div><img src={ './assets/bg1.jpeg' } alt="background" className="bg-img"/></div>
+    
 		</div>
     );
   }
