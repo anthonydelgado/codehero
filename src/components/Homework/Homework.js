@@ -3,47 +3,22 @@ import './Homework.css';
 import descriptions from './Descriptions.js';
 import { Button, Row } from 'react-materialize';
 
-import axios from 'axios';
 // import { Link } from 'react-router';
 
 // import { render } from 'react-dom';
 // import brace from 'brace';
+import axios from 'axios';
 import AceEditor from 'react-ace';
 
 import 'brace/mode/javascript';
 import 'brace/theme/monokai';
 
+// var axios = new axios;
+
 
 function onChange(newValue) {
   console.log('change',newValue);
 }
-
-// function yellMayday() {
-// 		axios({
-// 		  method: 'post',
-// 		  url: 'https://hooks.slack.com/services/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',
-// 		  data: {
-// 		    "text":"This is a line of text.\nAnd this is another one."
-// 		  }
-// 		});
-
-// 		console.log('Mayday button clicked');
-// 	}
-
-function onMaydayClick() {
-	console.log('Mayday button clicked');
-	// Slackbot triggered
-
-	axios.get('/slack-hook')
-	.then(function (response) {
-  		console.log('Mayday button clicked');
-    	console.log(response);
-    })
-    .catch(function (error) {
-		console.log(error);
-		});
-};
-
 
 const Homework = ({
 	params
@@ -68,7 +43,6 @@ const Homework = ({
 	})
 
 	return (
-
 		<div className="homework">
 			{ titles[params.weekId] } 
 			<Row>
@@ -87,10 +61,25 @@ const Homework = ({
 			    defaultValue={ descriptions[params.weekId] }
 			/>
 
-
 		</div>
-		
+			
 	);
+
+	function onMaydayClick() {
+		var currentURL = window.location.origin;
+		console.log('Mayday button clicked');
+		// Slackbot triggered
+		axios.get('/slack-hook')
+		.then(function (response) {
+			console.log("url is: " + currentURL);
+	    	console.log(response);
+	    })
+	    .catch(function (error) {
+			console.log(error);
+			});
+	}
+};
+
 
 
 export { Homework as default };
