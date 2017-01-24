@@ -2,17 +2,14 @@ import React from 'react';
 import './Homework.css';
 import descriptions from './Descriptions.js';
 import { Button, Row } from 'react-materialize';
-
-
 // import { Link } from 'react-router';
-
 // import { render } from 'react-dom';
 // import brace from 'brace';
+import axios from 'axios';
 import AceEditor from 'react-ace';
 
 import 'brace/mode/javascript';
 import 'brace/theme/monokai';
-
 
 function onChange(newValue) {
   console.log('change',newValue);
@@ -66,9 +63,15 @@ const Homework = ({
 	function onMaydayClick() {
 		console.log('Mayday button clicked');
 		// Slackbot triggered
+		axios.get('/slack-hook')
+		.then(function (response) {
+			console.log("url is: " + currentURL);
+	    	console.log(response);
+	    })
+	    .catch(function (error) {
+			console.log(error);
+			});
 	}
 };
-
-
 
 export { Homework as default };
