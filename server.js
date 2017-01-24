@@ -12,7 +12,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
 app.get('/', function(req,res) {
-	res.sendFile(path.join(__dirname, "/test.html"))
+	res.sendFile(path.join(__dirname, "/public/index.html"))
 });
 
 app.get('/slack-hook', function(req, res) {

@@ -3,15 +3,11 @@ import './Homework.css';
 import descriptions from './Descriptions.js';
 import { Button, Row } from 'react-materialize';
 
-
+import axios from 'axios';
 // import { Link } from 'react-router';
 
 // import { render } from 'react-dom';
 // import brace from 'brace';
-var Mayday = require("../Mayday-Button/Mayday.js");
-import {Button} from 'react-materialize';
-// import '../Mayday-Button/Mayday.js';
-import axios from 'axios';
 import AceEditor from 'react-ace';
 
 import 'brace/mode/javascript';
@@ -34,6 +30,19 @@ function onChange(newValue) {
 // 		console.log('Mayday button clicked');
 // 	}
 
+function onMaydayClick() {
+	console.log('Mayday button clicked');
+	// Slackbot triggered
+
+	axios.get('/slack-hook')
+	.then(function (response) {
+  		console.log('Mayday button clicked');
+    	console.log(response);
+    })
+    .catch(function (error) {
+		console.log(error);
+		});
+};
 
 
 const Homework = ({
@@ -82,21 +91,6 @@ const Homework = ({
 		</div>
 		
 	);
-
-	function onMaydayClick() {
-		console.log('Mayday button clicked');
-		// Slackbot triggered
-
-		axios.get('/slack-hook')
-		.then(function (response) {
-	  		console.log('Mayday button clicked');
-	    	console.log(response);
-	    })
-	    .catch(function (error) {
-			console.log(error);
-			});
-};
-
 
 
 export { Homework as default };
