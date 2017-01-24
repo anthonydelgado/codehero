@@ -6,6 +6,17 @@ body {
 a {
   color: #00B7FF;
 }
+
+.heroman {
+  position: fixed;
+  z-index: 99;
+  bottom: 0;
+  right: 0;
+}
+
+.heroman #videoElement {
+  max-width: 360px;
+}
 #index-banner {
   background: #000000;
   background-image:  url("../images/bg.jpeg");

@@ -18,10 +18,15 @@ html
         ul.right
           if (user)
             li
-              a.btn.red.waves-effect.waves-light(href='/slack-hook')
-                | HELP!
+              a.btn.red.waves-effect.waves-light#helpme
+                | Mayday!
             li
               a(href='/logout') Logout
+          if (!user)
+            li
+              a.btn.grey.darken-4(href='/login') Login
+            li
+              a.btn.grey.darken-4(href='/login') Join
 
   block content
 
