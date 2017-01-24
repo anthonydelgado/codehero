@@ -1,7 +1,7 @@
 import React from 'react';
 import './Homework.css';
 import descriptions from './Descriptions.js';
-import { Button, Row } from 'react-materialize';
+import { Button } from 'react-materialize';
 // import { Link } from 'react-router';
 // import { render } from 'react-dom';
 // import brace from 'brace';
