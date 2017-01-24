@@ -2,9 +2,7 @@ import React from 'react';
 import './Homework.css';
 import descriptions from './Descriptions.js';
 import { Button, Row } from 'react-materialize';
-
 // import { Link } from 'react-router';
-
 // import { render } from 'react-dom';
 // import brace from 'brace';
 import axios from 'axios';
@@ -12,9 +10,6 @@ import AceEditor from 'react-ace';
 
 import 'brace/mode/javascript';
 import 'brace/theme/monokai';
-
-// var axios = new axios;
-
 
 function onChange(newValue) {
   console.log('change',newValue);
