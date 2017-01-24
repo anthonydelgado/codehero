@@ -66,7 +66,6 @@ const Homework = ({
 	);
 
 	function onMaydayClick() {
-		var currentURL = window.location.origin;
 		console.log('Mayday button clicked');
 		// Slackbot triggered
 		axios.get('/slack-hook')
@@ -79,7 +78,5 @@ const Homework = ({
 			});
 	}
 };
-
-
 
 export { Homework as default };
