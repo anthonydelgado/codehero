@@ -1,3 +1,15 @@
 #brace-editor{
 	width: 100%;
 }
+
+.mayday {
+	margin: 5px;
+}
+
+.homework-title {
+	margin-left: 5px;
+	margin-bottom: 0;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 20px;
+	margin: 0 1vw;
+}

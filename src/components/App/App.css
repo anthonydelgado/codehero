@@ -26,6 +26,7 @@
 }
 
 .app-header__current {
-	font-size: 16px;
+	font-size: 20px;
 	margin: 0 1vw;
+	font-family: 'Roboto Condensed', sans-serif;
 }

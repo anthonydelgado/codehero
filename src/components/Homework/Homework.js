@@ -39,10 +39,12 @@ const Homework = ({
 
 	return (
 		<div className="homework">
-			{ titles[params.weekId] } 
-			<Row>
+			<div className="homework-title">
+				{ titles[params.weekId] } 
+			</div>
+			<div>
 				<Button onClick={ () => { onMaydayClick() } } className='mayday #ef5350 red lighten-1' waves='light'>MAYDAY!</Button>
-			</Row>
+			</div>
 			<AceEditor
 				className="ace-editor"
 			    mode="javascript"
@@ -65,7 +67,7 @@ const Homework = ({
 		// Slackbot triggered
 		axios.get('/slack-hook')
 		.then(function (response) {
-			console.log("url is: " + currentURL);
+			// console.log("url is: " + currentURL);
 	    	console.log(response);
 	    })
 	    .catch(function (error) {
